@@ -565,7 +565,7 @@ public class AutocrafterBlockEntity extends AbstractBaseNetworkNodeContainerBloc
         if (connectedMachineStack.isEmpty()) {
             return null;
         }
-        return new AutocrafterExternalPatternSinkDetails(getName().getString(), connectedMachineStack);
+        return new AutocrafterExternalPatternSinkDetails(getName().getString(), connectedMachineStack.copy());
     }
 
     @Override

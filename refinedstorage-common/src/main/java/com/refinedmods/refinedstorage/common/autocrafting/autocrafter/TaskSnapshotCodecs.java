@@ -102,6 +102,7 @@ final class TaskSnapshotCodecs {
                 ).forGetter(ts -> Optional.ofNullable(ts.lastSinkResult())),
             SINK_DETAILS_CODEC.optionalFieldOf("lastSinkDetails")
                 .forGetter(ts -> ts.lastSinkDetails() instanceof AutocrafterExternalPatternSinkDetails details
+                    && !details.stack().isEmpty()
                     ? Optional.of(details)
                     : Optional.empty()),
             UUIDUtil.CODEC.listOf().fieldOf("pendingSinkIds").forGetter(ts -> ts.pendingSinkIds().stream()

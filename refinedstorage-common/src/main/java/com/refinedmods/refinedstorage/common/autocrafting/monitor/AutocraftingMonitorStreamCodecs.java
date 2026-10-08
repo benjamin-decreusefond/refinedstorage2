@@ -87,7 +87,8 @@ public final class AutocraftingMonitorStreamCodecs {
 
         private void encodeDetails(final RegistryFriendlyByteBuf buf,
                                    @Nullable final ExternalPatternSinkDetails details) {
-            if (details instanceof AutocrafterExternalPatternSinkDetails(String name, ItemStack stack)) {
+            if (details instanceof AutocrafterExternalPatternSinkDetails(String name, ItemStack stack)
+                && !stack.isEmpty()) {
                 buf.writeBoolean(true);
                 buf.writeUtf(name);
                 ItemStack.STREAM_CODEC.encode(buf, stack);

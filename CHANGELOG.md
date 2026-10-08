@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Crash when opening the Autocrafting Monitor, and Autocrafter tasks failing to save, after the cached item of the machine an Autocrafter is connected to became empty ("Empty ItemStack not allowed").
+
 ## [3.2.1] - 2026-06-07
 
 ### Fixed
